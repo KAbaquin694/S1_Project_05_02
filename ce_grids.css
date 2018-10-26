@@ -12,21 +12,30 @@
 
 */
 
+/* div {
+    border: 1px solid red;
+} */
 
 /* Grid Rows Styles */
+
+/* This portion of code styles the elements with the row class that are in the grid. */
 
 div.row {
     width: 100%;
     clear: both;
 }
 
-/* .row {
-    float: auto;
-} */
+div.row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
 
 /* Grid Columns Styles */
 
-div.column {
+/* This section styles the div elements with various column classes for the grid. */
+
+div[class^='column'] {
     float: left;
 }
 
@@ -72,7 +81,12 @@ div.column80 {
 
 /* Grid Spacing Styles */
 
+/* This block of code adjusts the spacing of the grid(s). */
+
 div.container,
-div.row {
+div.row,
+div[class^='column'],
+.cell,
+div.cell a {
     box-sizing: border-box;
 }
